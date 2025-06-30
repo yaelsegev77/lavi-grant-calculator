@@ -49,31 +49,4 @@ export default function GrantCalculator() {
       grant = Math.round(salaryComp + vatComp);
     }
 
-    setResult({ grant, drop });
-  };
-
-  return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-      <h2>מחשבון מענק לעסקים</h2>
-      <input name="type" placeholder="סוג העוסק" onChange={handleChange} /><br/>
-      <input name="yearly" placeholder="מחזור שנתי" onChange={handleChange} /><br/>
-      <input name="may24" placeholder="הכנסות מאי 2024" onChange={handleChange} /><br/>
-      <input name="jun24" placeholder="הכנסות יוני 2024" onChange={handleChange} /><br/>
-      <input name="may25" placeholder="הכנסות מאי 2025" onChange={handleChange} /><br/>
-      <input name="jun25" placeholder="הכנסות יוני 2025" onChange={handleChange} /><br/>
-      {Number(form.yearly) > 300000 && (
-        <>
-          <input name="salary" placeholder="הוצאות שכר" onChange={handleChange} /><br/>
-          <input name="vat" placeholder="תשומות שנתיות" onChange={handleChange} /><br/>
-        </>
-      )}
-      <button onClick={calculate}>חשב מענק</button>
-      {result && (
-        <div>
-          <p>אחוז ירידה: {result.drop}%</p>
-          <p>מענק משוער: {result.grant.toLocaleString()} ש\"ח</p>
-        </div>
-      )}
-    </div>
-  );
-}
+    setResu
