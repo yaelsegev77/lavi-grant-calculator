@@ -49,4 +49,41 @@ export default function GrantCalculator() {
       grant = Math.round(salaryComp + vatComp);
     }
 
-    setResu
+    setResult({ grant, drop });
+  };
+
+  return (
+    <div className="container">
+      <h2>מחשבון מענק לעסקים</h2>
+      <input name="type" placeholder="סוג העוסק" onChange={handleChange} />
+      <input name="yearly" placeholder="מחזור שנתי" onChange={handleChange} />
+      <input name="may24" placeholder="הכנסות מאי 2024" onChange={handleChange} />
+      <input name="jun24" placeholder="הכנסות יוני 2024" onChange={handleChange} />
+      <input name="may25" placeholder="הכנסות מאי 2025" onChange={handleChange} />
+      <input name="jun25" placeholder="הכנסות יוני 2025" onChange={handleChange} />
+      {Number(form.yearly) > 300000 && (
+        <>
+          <input name="salary" placeholder="הוצאות שכר" onChange={handleChange} />
+          <input name="vat" placeholder="תשומות שנתיות" onChange={handleChange} />
+        </>
+      )}
+      <button onClick={calculate}>חשב מענק</button>
+
+      {result && (
+        <div>
+          <p>אחוז ירידה: {result.drop}%</p>
+          <p>מענק משוער: {result.grant.toLocaleString()} ש"ח</p>
+        </div>
+      )}
+
+      {/* ✅ לוגו ממורכז מתחת לכפתור */}
+      <div style={{ marginTop: "3rem", textAlign: "center" }}>
+        <img
+          src="/logo.png.png"
+          alt="לוגו יעל שגב"
+          style={{ maxWidth: "220px", opacity: 0.7 }}
+        />
+      </div>
+    </div>
+  );
+}
