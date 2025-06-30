@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             marginTop: '3rem'
           }}>
             <img
-              src="/logo.png"
+              src="/logocol.png"
               alt="לוגו יעל שגב"
               style={{
                 maxHeight: '100%',
