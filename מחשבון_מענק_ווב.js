@@ -69,21 +69,21 @@ export default function GrantCalculator() {
       )}
       <button onClick={calculate}>חשב מענק</button>
 
+      {/* ✅ הלוגו כאן – צמוד לכפתור */}
+      <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+        <img
+          src="/logocol.png"
+          alt="לוגו יעל שגב"
+          style={{ maxWidth: "180px", opacity: 0.7 }}
+        />
+      </div>
+
       {result && (
         <div>
           <p>אחוז ירידה: {result.drop}%</p>
           <p>מענק משוער: {result.grant.toLocaleString()} ש"ח</p>
         </div>
       )}
-
-      {/* ✅ לוגו ממורכז מתחת לכפתור */}
-      <div style={{ marginTop: "3rem", textAlign: "center" }}>
-        <img
-          src="/logo.png.png"
-          alt="לוגו יעל שגב"
-          style={{ maxWidth: "220px", opacity: 0.7 }}
-        />
-      </div>
     </div>
   );
 }
