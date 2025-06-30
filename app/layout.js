@@ -14,7 +14,31 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <main>
+          {children}
+
+          {/* הלוגו מופיע מתחת לתוכן, ממורכז וגדול יחסית */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+            height: '30vh',
+            marginTop: '3rem'
+          }}>
+            <img
+              src="/logo.png.png"
+              alt="לוגו יעל שגב"
+              style={{
+                maxHeight: '100%',
+                maxWidth: '250px',
+                objectFit: 'contain',
+                opacity: 0.7
+              }}
+            />
+          </div>
+        </main>
+      </body>
     </html>
-  )
+  );
 }
