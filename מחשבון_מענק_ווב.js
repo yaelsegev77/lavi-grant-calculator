@@ -29,7 +29,6 @@ export default function GrantCalculator() {
     const y = Number(form.yearly);
     const rType = form.reportingType;
 
-    // השוואת יוני-ליוני במומודי דיווח חודשי, או סכום מאי+יוני בדו-חודשי
     const base24 =
       rType === "דו חודשי"
         ? Number(form.may24) + Number(form.jun24)
@@ -121,6 +120,15 @@ export default function GrantCalculator() {
           <small>{result.message}</small>
         </div>
       )}
+
+      {/* לוגו בתחתית המחשבון */}
+      <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
+        <img
+          src="/logocol.png"
+          alt="לוגו יעל שגב"
+          style={{ maxWidth: "180px", opacity: 0.7 }}
+        />
+      </div>
     </div>
   );
 }
