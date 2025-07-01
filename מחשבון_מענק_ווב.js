@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function GrantCalculator() {
   const [form, setForm] = useState({
-    type: "", yearly: "", may24: "", jun24: "",
+    yearly: "", may24: "", jun24: "",
     may25: "", jun25: "", salary: "", vat: ""
   });
   const [result, setResult] = useState(null);
@@ -55,7 +55,11 @@ export default function GrantCalculator() {
   return (
     <div className="container">
       <h2>מחשבון מענק לעסקים</h2>
-      <input name="type" placeholder="סוג העוסק" onChange={handleChange} />
+      <p style={{ marginBottom: "1rem", fontSize: "1rem", color: "#3c7770" }}>
+        מחשבון זה יסייע לך לחשב את גובה המענק הצפוי על סמך נתוני ההכנסה השנתית שלך
+        וההכנסות בחודשים הרלוונטיים, בהתאם לנתונים שפורסמו עד כה בתקשורת.
+      </p>
+
       <input name="yearly" placeholder="מחזור שנתי" onChange={handleChange} />
       <input name="may24" placeholder="הכנסות מאי 2024" onChange={handleChange} />
       <input name="jun24" placeholder="הכנסות יוני 2024" onChange={handleChange} />
@@ -69,7 +73,6 @@ export default function GrantCalculator() {
       )}
       <button onClick={calculate}>חשב מענק</button>
 
-      {/* ✅ הלוגו כאן – צמוד לכפתור */}
       <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
         <img
           src="/logocol.png"
